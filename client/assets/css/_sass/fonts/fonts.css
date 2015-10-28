@@ -1,0 +1,67 @@
+/* latin */
+@font-face {
+    font-family: 'Holtwood One SC';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    local('Holtwood One SC'),
+    local('HoltwoodOneSC'),
+    url(https://fonts.gstatic.com/s/holtwoodonesc/v7/sToOq3cIxbfnhbEkgYNuBZi4I2Fwo6sqyzVodtQ85Ik.woff2) format('woff2'),
+    url('/assets/css/fonts/HoltwoodOneSC.woff2') format('woff2'),
+    url('/assets/css/fonts/HoltwoodOneSC.woff') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Sacramento';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    local('Sacramento'),
+    local('Sacramento-RegularA'),
+    local('Sacramento-Regular'),
+    url(https://fonts.gstatic.com/s/sacramento/v4/Fpg3e9UodPQGSPnPRzpRPSEAvth_LlrfE80CYdSH47w.woff2),
+    url('/assets/css/fonts/Sacramento-RegularA.woff2') format('woff2'),
+    url('/assets/css/fonts/Sacramento-RegularA.woff') format('woff');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Sacramento';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    local('Sacramento'),
+    local('Sacramento-RegularB'),
+    url(https://fonts.gstatic.com/s/sacramento/v4/WFDkXpubrEwopJnSlHV6CPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2'),
+    url('/assets/css/fonts/Sacramento-RegularB.woff2') format('woff2'),
+    url('/assets/css/fonts/Sacramento-RegularB.woff') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Warnes';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    local('Warnes'),
+    local('Warnes-Regular'),
+    url(https://fonts.gstatic.com/s/warnes/v6/2kFTeckxl8IiVZKffOmKoPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2'),
+    url('/assets/css/fonts/Warnes-Regular.woff2') format('woff2'),
+    url('/assets/css/fonts/Warnes-Regular.woff') format('woff');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Warnes';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    local('Warnes'),
+    local('Warnes-Regular'),
+    url(https://fonts.gstatic.com/s/warnes/v6/IeM26aZh6wEmm42pWGUMfg.woff2) format('woff2'),
+    url('/assets/css/fonts/Warnes-RegularB.woff2') format('woff2'),
+    url('/assets/css/fonts/Warnes-RegularB.woff') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

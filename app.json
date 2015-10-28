@@ -1,0 +1,9 @@
+{
+  "name": "Melhoreme",
+  "description": "Melhoreme on Node.js",
+  "image": "heroku/nodejs",
+  "repository": "https://github.com/raul010/melhoreme.git",
+  "keywords": [
+    "node"
+  ]
+}

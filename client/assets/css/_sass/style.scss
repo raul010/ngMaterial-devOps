@@ -1,0 +1,204 @@
+@import "partials/reset";
+@import "partials/color";
+
+$color-toolbar-cyan:    $color-dark-blue_200;
+$color-toolbar-orange:  $color-orange_500;
+
+$layout-breakpoint-sm:     600px;
+$layout-breakpoint-md:     960px;
+$layout-breakpoint-lg:     1200px;
+
+//  << LAYOUT >> ------------------------------------------
+
+.hide-scroll {
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+}
+
+.text-white {
+  color: white !important;
+}
+//  end LAYOUT --------------------------------------------
+
+
+//  TOOLBAR >> --------------------------------------------
+
+.button-toolbar {
+
+  padding: 0 0 !important;
+  margin: 0 0;
+  cursor: pointer;
+  font-size: 15px;
+  color: $color-toolbar-cyan !important;
+  min-width: 85px;
+  text-transform: none;
+
+  // Center H e V --------------
+  text-align: center;
+  vertical-align: middle;
+  line-height: 64px;
+  //-------------------------
+
+  &:hover {
+    background-color: $color-dark-blue_600 !important;
+    color: $color-dark-blue_100 !important;
+  }
+  &:active {
+    //background-color: $color-dark-blue_700;
+    color: $color-dark-blue_300 !important;
+  }
+
+  @media only screen and (min-width: 0) and (max-width: 600px) and (orientation: portrait) {
+    line-height: 54px;
+  }
+  @media only screen and (min-width: 0) and (max-width: 600px) and (orientation: landscape) {
+      line-height: 46px;
+  }
+
+}
+
+.m{
+  font-family: 'Holtwood One SC', serif;
+  color: $color-amber_500 !important;
+  font-size: 60px;
+  cursor: pointer;
+  &:hover {
+    color: $color-toolbar-cyan !important;
+  }
+  &:active {
+    color: #ffffff !important;
+  }
+  &:after {
+
+
+    content:'M';
+  }
+  //
+  @media only screen and (min-width: 0) and (max-width: $layout-breakpoint-sm) and (orientation: portrait) {
+    font-size: 50px;
+  }
+  @media only screen and (min-width: 0) and (max-width: $layout-breakpoint-sm) and (orientation: landscape) {
+    font-size: 46px;
+  }
+
+}
+// opopossooodsdf
+.elhore {
+  font-family: 'Sacramento', cursive;
+  color: $color-light-green_800;
+  font-size: 25px;
+
+  &:after {
+    content: 'elhore';
+  }
+}
+
+.m-2 {
+  /*font-family: 'Sacramento', cursive;*/
+  font-family: 'Warnes', cursive;
+
+  color: $color-light-green_800;
+
+  font-size: 10px;
+
+  &:after {
+    content: '.me';
+  }
+  @media only screen and (min-width: 0) and (max-width: $layout-breakpoint-sm) and (orientation: portrait) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 0) and (max-width: $layout-breakpoint-sm) and (orientation: landscape) {
+    font-size: 10px;
+  }
+
+}
+
+.search {
+  border-bottom-color: $color_dark-blue_400 !important;
+  font-family: dejavu sans mono, monospace !important;
+  color: $color-light-green-500 !important;
+  font-size: 18px;
+
+  //padding: 2px 2px 2px 2px;
+  &:focus {
+    border-bottom-color: $color-amber_500 !important;
+  }
+}
+.ajuste-search {
+  padding-bottom: 0px;
+}
+// end TOOLBAR ---------------------------------------------
+
+
+
+//  << COMPONENTs >> ---------------------------------------
+
+hr.ou {
+  padding: 0;
+  border: 0;
+  height: 1px;
+  /*border-top: medium double #333;*/
+  /*color: #333;*/
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0));
+}
+
+hr.ou:after {
+  content: "ou";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.3em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+//  end COMPONETs ------------------------------------------
+
+
+//  << CARDs >> --------------------------------------------
+
+//min-height: 95%;
+//max-height: 95%;
+
+//@media only screen and (min-width: 0) and (max-width: $layout-breakpoint-sm) {
+//  min-height: 93%;
+//  max-height: 93%;
+//}
+
+.card-destaque {
+  cursor: pointer;
+  margin: 0 0 0 1px !important;
+  img {
+  //  oioo
+  }
+  &:hover {
+    border-radius: 5px 5px 3px 3px;
+    background-color: $color-dark-blue_500;
+  }
+}
+//oioi oi oioi oi oi oi op oi oi oi oi
+.card-content {
+  //padding: 0 0 0 0 !important;
+
+}
+
+.card-semi-destaque {
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color-dark-blue_500;
+  }
+}
+
+.card-padrao {
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color-dark-blue_500;
+  }
+}
+
+//  end CARDs  ---------------------------------------------
+
+@import "partials/samples-temp";

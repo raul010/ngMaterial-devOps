@@ -1,0 +1,50 @@
+
+@import "color";
+/*
+  Testes, exemplos, temporarios
+*/
+
+.gray {
+  background: #f5f5f5; }
+.green {
+  background: #b9f6ca; }
+.yellow {
+  background: #ffff8d; }
+.blue {
+  background: #84ffff; }
+.purple {
+  background: #b388ff; }
+.red {
+  background: #ff8a80; }
+.md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+
+
+.dark-blue {
+  background-color: $color-amber_500;
+}
+
+.light-green {
+  background-color: $color-light-green_500;
+}
+.lime {
+  background-color: $color-lime_500;
+}
+.yellow {
+  background-color: $color-yellow_500;
+}
+.amber {
+  background-color: $color-amber_500;
+}
+.orange {
+  background-color: $color-orange_500;
+
+}
+.deep-orange {
+  background-color: $color-deep-orange_500;
+}
+.cyan {
+  background-color: $color-cyan_500;
+}
+

@@ -1,0 +1,438 @@
+<!-- located at client/index.html -->
+<!doctype html >
+<html ng-app="sampleApp" ng-controller="MainController" lang="pt-BR"  >
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+	<title>Melhore.me</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        .main-toolbar {
+            background-color: #033649;
+        }
+    </style>
+
+    <!-- build:css inline -->
+    <link href='assets/css/fonts/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- /build -->
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <!-- build:css inline assets/libs/angular-material/angular-material.min.css -->
+    <link rel="stylesheet" href="assets/libs/angular-material/angular-material.css" >
+    <!-- /build -->
+
+    <!-- build:css inline -->
+    <link rel="stylesheet" href="assets/css/style.css" >
+    <!-- /build -->
+</head>
+
+
+<body >
+
+<div ng-controller="SideNavControler as sideNav" role="main">
+<!--<div ng-controller="SideNavControler" layout="column" style="height:100%;">-->
+
+    <md-toolbar class="main-toolbar">
+        <div class="md-toolbar-tools">
+            <span hide-sm flex="5"></span>
+            <md-button ng-click="sideNav.toggleLeft()" hide-gt-md class="md-icon-button button-toolbar" aria-label="Menu">
+                <md-icon md-svg-icon="all:menu"></md-icon>
+            </md-button>
+            <h2>
+                <!--<span class="m">M</span><span class="logo">elhore.<span class="m-2">m</span>e</span>-->
+                <span class="m"></span><span hide-sm class="elhore"></span><span class="m-2"></span>
+            </h2>
+
+            <div flex layout="row" layout-align="center center" md-theme="orangeTheme" >
+                <div flex="15"></div>
+
+
+                <md-input-container class="md-icon-float ajuste-search" layout-fill ng-cloak>
+                    <md-icon md-svg-icon="all:search"></md-icon>
+                    <input ng-model="cadastro.user.username" type="text" class="search" aria-label="pesquisa">
+                </md-input-container>
+
+                <div flex="15"></div>
+
+            </div>
+            <div layout="row" layout-align="end center" ng-cloak>
+                <md-button hide-sm ng-click="sideNav.toggleRightCadastro()" class="button-toolbar" aria-label="Cadastro" >
+                    cadastro
+                </md-button>
+                <md-button hide-sm ng-click="sideNav.toggleRightLogin();" class="button-toolbar" aria-label="Login" >
+                    <!--<md-icon md-svg-icon="all:menu_vert"></md-icon>-->
+                    login
+                </md-button>
+                <md-button hide-gt-sm ng-click="sideNav.toggleRightLogin();" class="button-toolbar" aria-label="Login" >
+                    <!--<md-icon md-svg-icon="all:menu_vert"></md-icon>-->
+                    entrar
+                </md-button>
+            </div>
+            <span hide-sm flex="5"></span>
+
+
+        </div>
+    </md-toolbar>
+
+    <md-whiteframe class="md-whiteframe-4dp" layout layout-align="center center">
+        <span><br/><br/></span>
+    </md-whiteframe>
+    <div ng-cloak>
+        <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" >
+            <div layout="row" layout-padding>
+                <h4>Categorias</h4>
+
+                <span flex hide-md></span>
+
+                <md-button ng-click="sideNav.close('left')" class="md-icon-button md-primary" aria-label="Close">
+                    <md-icon md-svg-icon="all:window_close" style="width:16px;height:16px;" hide-sm></md-icon>
+                    <md-icon md-svg-icon="all:window_close" hide-gt-sm></md-icon>
+
+                </md-button>
+            </div>
+        </md-sidenav>
+
+        <a href ng-init="toogle=true" ng-click="toogle=toogle ? false : true">tgl</a>
+
+        <section layout="row" layout-padding> <!-- class="hide-scroll" -->
+            <span show-gt-md flex="5"></span>
+
+            <md-content ng-show="toogle"  layout-fill style="background-color: #FEFEFE" > <!-- class="hide-scroll"-->
+                <div ng-controller="CardsController as cards" >
+                    <div >
+                        <h3 class="md-headline">
+                            Em alta&nbsp;<span class="md-caption">&nbsp;Novos e bem avaliados</span>
+                        </h3>
+                        <!--md-row-height="1:10"-->
+
+                        <md-grid-list
+                                md-row-height="1:4"
+                                md-row-height-sm="4:38"
+                                md-cols="12"
+                                md-gutter="20"
+
+                                >
+                            <md-grid-tile
+                                    md-colspan="6"
+                                    md-colspan-sm="12"
+                                    class="green"
+                                    ng-repeat="c in ['amber', 'cyan']"
+                                    >
+
+                                <md-content layout-fill> <!-- class="md-padding" --><!-- class="hide-scroll"-->
+                                    <a ng-href="/video" >
+                                        <md-card class="card-destaque md-whiteframe-z2 {{ c }}" >
+                                            <!--<div class="purple "></div>-->
+                                            <img ng-src="./assets/img/washedout.png" class="md-card-image" alt="Washed Out">
+                                            <md-card-content layout="column" class="card-content ">
+                                                <!--<h2 class="md-title">Paracosm</h2>-->
+                                                <br/><br/>
+                                            </md-card-content>
+                                            <!--<div class="md-actions" layout="row" layout-align="end center">-->
+                                                <!--<md-button>Act.</md-button>-->
+                                            <!--</div>-->
+                                        </md-card>
+                                    </a>
+                                </md-content>
+                            </md-grid-tile>
+                        </md-grid-list>
+
+                        <h3 class="md-headline">
+                            Melhores do mês&nbsp;<span class="md-caption">&nbsp;Novos e bem avaliados</span>
+                        </h3>
+                        <md-grid-list
+                                md-row-height="3:10"
+                                md-row-height-sm="2:10"
+                                md-cols="12"
+                                md-gutter="25">
+                            <md-grid-tile
+                                    md-colspan="4"
+                                    md-colspan-sm="6"
+                                    class="purple"
+                                    ng-repeat="c in ['light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange']"
+
+                                    >
+                                <md-content layout-fill> <!-- class="md-padding" -->
+                                    <md-card class="card-semi-destaque {{ c }}">
+                                        <img ng-src="./assets/img/washedout.png" class="md-card-image" alt="Washed Out">
+                                        <md-card-content class="">
+                                            <!--<h2 class="md-title">Paracosm</h2>-->
+                                        </md-card-content>
+                                        <div class="md-actions" layout="row" layout-align="end center">
+                                            <!--<md-button>Act.</md-button>-->
+
+                                        </div>
+                                    </md-card>
+                                </md-content>
+
+                            </md-grid-tile>
+
+
+                        </md-grid-list>
+
+
+                        <br>
+                        <h3 class="md-headline">
+                            Recentes&nbsp;<span class="md-caption">&nbsp;Novos e bem avaliados</span>
+                        </h3>
+                        <md-grid-list
+                                md-row-height="4:10"
+                                md-row-height-sm="2:10"
+                                md-cols="12"
+                                md-gutter="25"
+
+                                >
+
+                            <md-grid-tile
+                                    md-colspan="3"
+                                    md-colspan-sm="6"
+                                    class="green"
+                                    ng-repeat="c in ['cyan','light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 7, 8, 9, 10, 11, 12]"
+                                    >
+                                <md-content layout-fill> <!-- class="md-padding" -->
+                                    <md-card class="card-padrao {{ c }}">
+                                        <img ng-src="./assets/img/washedout.png" class="md-card-image" alt="Washed Out">
+                                        <md-card-content class="">
+                                            <!--<h2 class="md-title">Paracosm</h2>-->
+                                        </md-card-content>
+                                        <div class="md-actions" layout="row" layout-align="end center">
+                                            <!--<md-button>Act.</md-button>-->
+                                        </div>
+                                    </md-card>
+                                </md-content>
+                            </md-grid-tile>
+                        </md-grid-list>
+                    </div>
+                </div>
+
+                <span flex></span>
+                final md-content
+            </md-content>
+
+            <!--</div>-->
+
+            <md-whiteframe ng-show="!toogle" flex="15" class="md-whiteframe-4dp" layout-fill layout-padding>
+                <md-content layout-fill">
+                Categoria
+                <div ng-repeat="filtro in ['a', 'b', 'c', 'd', 'e', 'f', 'g','h']">
+                    <md-checkbox>
+                        <span class="md-caption">categoria {{ filtro }}</span>
+                    </md-checkbox>
+                </div>
+                </md-content>
+            </md-whiteframe>
+            <div ng-show="!toogle" flex="5"></div>
+            <md-content ng-show="!toogle" layout-fill style="background-color: #FEFEFE" >
+                <div ng-controller="CardsController as cards" >
+                    <h3 class="md-headline">
+                        Melhores do mês&nbsp;<span class="md-caption">&nbsp;Pesquisa side</span>
+                    </h3>
+                    <md-grid-list
+                            md-row-height="3:10"
+                            md-row-height-sm="2:10"
+                            md-cols="12"
+                            md-gutter="25">
+                        <md-grid-tile
+                                md-colspan="4"
+                                md-colspan-sm="6"
+                                class="purple"
+                                ng-repeat="c in ['light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange']"
+
+                                >
+                            <md-content layout-fill> <!-- class="md-padding" -->
+                                <md-card class="card-semi-destaque {{ c }}">
+                                    <img ng-src="./assets/img/washedout.png" class="md-card-image" alt="Washed Out">
+                                    <md-card-content class="">
+                                        <!--<h2 class="md-title">Paracosm</h2>-->
+                                    </md-card-content>
+                                    <div class="md-actions" layout="row" layout-align="end center">
+                                        <!--<md-button>Act.</md-button>-->
+                                    </div>
+                                </md-card>
+                            </md-content>
+                        </md-grid-tile>
+                    </md-grid-list>
+                </div>
+            </md-content>
+
+            <span show-gt-md flex="5"></span>
+
+        </section>
+
+        <md-sidenav md-component-id="right-cadastro" md-theme="cadastroTheme" class="md-sidenav-right md-whiteframe-z2" >
+            <md-toolbar class="md-theme-light md-tall cadastro-toolBar" layout="column">
+                <div layout="row" layout-align="end start">
+                    <md-button ng-click="sideNav.close('right-cadastro')" class="md-icon-button" aria-label="Close">
+                        <md-icon md-svg-icon="all:window_close" style="width:16px;height:16px;" hide-sm></md-icon>
+                        <md-icon md-svg-icon="all:window_close" hide-gt-sm></md-icon>
+                    </md-button>
+                </div>
+
+                <span flex></span>
+
+                <div layout="row">
+                    <h1 class="md-toolbar-tools"><i>Cadastro</i></h1>
+                </div>
+            </md-toolbar>
+
+            <div ng-controller="CadastroControler as cadastro" layout="column">
+
+                <md-content layout-padding class="autoScroll">
+                    <br>
+                    <div layout="row" layout-align="center center">
+                        <a href="" ng-disabled="true" aria-label="facebook" >
+                            <md-icon md-svg-icon="social:facebook-account" style="width: 48px;height: 48px" ></md-icon>
+                        </a>
+                        <md-button class="md-icon-button" aria-label="github" >
+                            <md-icon md-svg-icon="social:github-account" style="width: 48px;height: 48px" ></md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="linkedin" >
+                            <md-icon md-svg-icon="social:linkedin-account" style="width: 48px;height: 48px" ></md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="google" >
+                            <md-icon md-svg-icon="social:google-account" style="width: 48px;height: 48px" ></md-icon>
+                        </md-button>
+                    </div>
+
+                    <br><br><hr class="ou"><br>
+
+                    <form>
+                        <br>
+                        <md-input-container class="md-icon-float" >
+                            <!-- Use floating label instead of placeholder -->
+                            <label>Email</label>
+                            <md-icon md-svg-icon="all:account_up"></md-icon>
+                            <input ng-model="cadastro.user.email" type="email" md-sidenav-focus>
+                        </md-input-container>
+                        <md-input-container class="md-icon-float" >
+                            <label>Senha</label>
+                            <md-icon md-svg-icon="all:account-password"></md-icon>
+                            <input ng-model="cadastro.user.password" type="password">
+                        </md-input-container>
+                        <md-input-container class="md-icon-float" >
+                            <label>Confirme a Senha</label>
+                            <md-icon md-svg-icon="all:account-password"></md-icon>
+                            <input ng-model="cadastro.user.password" type="password">
+                        </md-input-container>
+                    </form>
+                    <br>
+                    <p class="md-caption">Caso ainda não possua uma conta: Por favor,
+                        cadastre-se.
+                        <md-button ng-click="sideNav.close('right-cadastro');sideNav.toggleRightLogin();"
+                                   class="md-icon-button" aria-label="fechar">
+                            <md-icon md-svg-icon="all:seta" class="md-primary"></md-icon>
+                        </md-button>
+                    </p>
+
+                </md-content>
+            </div>
+        </md-sidenav>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-theme="loginTheme" md-component-id="right-login" >
+
+        <md-toolbar class="md-theme-light md-tall login-toolBar" layout="column">
+            <div layout="row" layout-align="end start">
+                <md-button ng-click="sideNav.close('right-login')" class="md-icon-button text-white" aria-label="Close">
+                    <md-icon md-svg-icon="all:window_close" style="width:16px;height:16px;" hide-sm></md-icon>
+                    <md-icon md-svg-icon="all:window_close" hide-gt-sm></md-icon>
+                </md-button>
+            </div>
+
+            <span flex></span>
+            <div layout="row">
+                <h1 class="md-toolbar-tools text-white"><i>Login</i></h1>
+            </div>
+        </md-toolbar>
+
+        <div ng-controller="LoginControler as login" layout="column">
+
+            <md-content  layout-padding class="autoScroll">
+                <br>
+                <div layout="row" layout-align="center center">
+                    <a href="" ng-disabled="true" aria-label="facebook" >
+                        <md-icon md-svg-icon="social:facebook-account" style="width: 48px;height: 48px" ></md-icon>
+                    </a>
+                    <md-button class="md-icon-button" aria-label="github" >
+                        <md-icon md-svg-icon="social:github-account" style="width: 48px;height: 48px" ></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="linkedin" >
+                        <md-icon md-svg-icon="social:linkedin-account" style="width: 48px;height: 48px" ></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="google" >
+                        <md-icon md-svg-icon="social:google-account" style="width: 48px;height: 48px" ></md-icon>
+                    </md-button>
+                </div>
+                <br><br><hr class="ou"><br>
+                <form>
+                    <br>
+                    <md-input-container class="md-icon-float" >
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Usuário</label>
+                        <md-icon md-svg-icon="all:account_up"></md-icon>
+                        <input ng-model="login.user.username" type="text" md-sidenav-focus>
+                    </md-input-container>
+                    <md-input-container class="md-icon-float" >
+                        <label>Senha</label>
+                        <md-icon md-svg-icon="all:account-password"></md-icon>
+                        <input ng-model="login.user.password" type="password">
+                    </md-input-container>
+                </form>
+                <br>
+                <p class="md-caption">Caso ainda não possua uma conta: Por favor, cadastre-se
+                    <md-button ng-click="sideNav.close('right-login');sideNav.toggleRightCadastro();"
+                               class="md-icon-button">
+                        <md-icon md-svg-icon="all:seta" class="md-primary" aria-label="fechar"></md-icon>
+                    </md-button>
+                </p>
+
+            </md-content>
+        </div>
+    </md-sidenav>
+    </div>
+</div>
+
+<!-- build:js assets/libs/angular/angular.min.js -->
+<script src="assets/libs/angular/angular.js"></script>
+<!-- /build -->
+
+<!-- build:js inline /assets/libs/angular-material/angular-material.min.js -->
+<script src="assets/libs/angular-material/angular-material.js"></script>
+<!-- /build -->
+
+<!-- build:js inline -->
+<script src="assets/libs/angular-animate/angular-animate.min.js"></script>
+<script src="assets/libs/angular-route/angular-route.min.js"></script>
+<script src="assets/libs/angular-aria/angular-aria.min.js"></script>
+<script src="assets/libs/angular-messages/angular-messages.min.js"></script>
+<!-- /build -->
+
+
+<!-- INLINE -------------------------------------------------------------->
+<!-- build:js inline -->
+<script src="app/appRoutes.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/MainCtrl.js"></script>
+<script src="app/controllers/SideNavCtrl.js" ></script>
+<script src="app/controllers/CadastroCtrl.js" ></script>
+<script src="app/controllers/LoginCtrl.js" ></script>
+<script src="app/controllers/CardsCtrl.js" ></script>
+<script src="app/controllers/VideoCtrl.js" ></script>
+<script src="app/services/SomeService.js" ></script>
+<!-- /build -->
+
+
+</body>
+</html>
